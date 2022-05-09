@@ -12,6 +12,7 @@ const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const closeCross = document.querySelectorAll(".close")
+const inputIn = document.querySelectorAll(".text-control")
 
 
 // launch modal event
