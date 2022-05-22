@@ -112,6 +112,18 @@ formeInfo.addEventListener('submit',function(ev){
         formData[2].dataset.errorVisible = "true"
       }
     }
+    
+    // (4) nombre de concours >=0 - Pour le nombre de concours, une valeur numerique est saisie
+    if (elem.id == 'quantity') {
+      if (elem.value === ""){
+        elem.style.background  = "affbbbb"
+        quantityChecked = false
+        formData[4].dataset.errorVisible = "true"
+      } else {
+        quantityChecked = true
+      }
+    }
+
   })
 })
 
