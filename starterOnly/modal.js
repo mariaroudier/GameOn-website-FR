@@ -58,4 +58,38 @@ function closeModal() {
 // (5) Un bouton radio est sélectionné
 // (6) La case des conditions générales est cochée
 
+formeInfo.addEventListener('submit',function(ev){
+  // on arrete l'envoy de forme par default
+  ev.preventDefault() 
 
+  inputIn.forEach(elem => {
+
+    // (1)  - check prenom > 2 - Le champ Nom a un min de 2 caractères / n'est pas vide
+    if (elem.id == 'first') {                           
+      if (elem.value.length < 2) {
+        elem.style.background = "affbbbb"
+        firstChecked = false
+        formData[0].dataset.errorVisible = "true"
+      } else {
+        elem.style.background = "fff"
+        firstChecked = true
+        formData[0].dataset.errorVisible = "false"
+      }
+    }
+  
+    // (2) check nom > 2 - Le champ Nom a un min de 2 caractères / n'est pas vide
+    else if (elem.id == 'last') {                     
+      if (elem.value.length < 2) {
+        elem.style.background = "affbbbb"
+        lastChecked = false
+        formData[1].dataset.errorVisible = "true"
+      } 
+      //pour rester blanc si le nom a >= 2 letters
+      else {                                        
+        elem.style.background = "fff"
+        lastChecked = true
+        formData[1].dataset.errorVisible = "false"
+      }
+    }
+  })
+})
