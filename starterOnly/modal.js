@@ -153,6 +153,28 @@ formeInfo.addEventListener('submit',function(ev){
       checkbox1Checked = false
       formData[6].dataset.errorVisible = "true"
     }
+    // pour casher la forme et montrer un message
+    if (firstChecked == true && 
+      lastChecked == true && 
+      emailChecked == true && 
+      birthdateChecked == true && 
+      quantityChecked == true && 
+      radioChecked == true && 
+      checkbox1Checked == true){
+        console.log("its working!!!!")
+        modalbg.style.display = 'none';
+        welPage.style.display = 'block';
+      }
+
+
+    // close welcome page
+    welButton.addEventListener("click", closeWelcomePage);
+
+    function closeWelcomePage() {
+      welPage.style.display = 'none';
+      console.log('its working')
+    }
+
   })
 
 

@@ -528,3 +528,54 @@ footer {
   }
 }
 
+#welcome-page{
+  display: none;
+  position: fixed;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(26, 39, 156, 0.4);
+}
+
+#text-box{
+  display: flex;
+  position: absolute;
+  justify-content: space-around;
+  flex-direction: column;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  background-color: #232323;
+  width: 50%;
+  height: 200px;
+  -webkit-transform:translate(-50%, -50%);
+  -moz-transform:translate(-50%, -50%);
+  -ms-transform:translate(-50%, -50%);
+  -o-transform:translate(-50%, -50%);
+}
+
+#welcome-text{
+  color: #ffffff;
+  align-self: center;
+  text-align: center;
+  padding: 25px;
+  
+}
+@media screen and (max-width: 540px) {
+  #welcome-text{
+    font-size: 14px;
+  }
+}
+
+#welcome-btn{
+  width: 40%;
+  align-self: center;
+  border-radius: 10px;
+}
+@media screen and (max-width: 540px) {
+  #welcome-btn{
+    width: 50%
+  }
+}
