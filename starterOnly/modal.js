@@ -144,6 +144,15 @@ formeInfo.addEventListener('submit',function(ev){
         formData[5].dataset.errorVisible = "true";
       }
     }
+
+    // (6) checkbox1 is checked - La case des conditions générales est cochée
+    if (document.getElementById('checkbox1').checked == true){
+      checkbox1Checked = true
+      formData[6].dataset.errorVisible = "false"
+    } else {
+      checkbox1Checked = false
+      formData[6].dataset.errorVisible = "true"
+    }
   })
 
 
