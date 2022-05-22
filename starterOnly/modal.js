@@ -129,6 +129,28 @@ formeInfo.addEventListener('submit',function(ev){
       elem.dataset.errorVisible = "false";
     }))
 
+    inputIn.forEach(elem => elem.addEventListener("click", back = () => {
+      elem.style.background = '#fff'
+    }))
+  
+    // (5) radio is checked - Un bouton radio est sélectionné
+    for (const radio of listRadio) {
+      if (radio.checked == true) {
+        radioChecked = true
+        formData[5].dataset.errorVisible = "false"
+        break
+      } else {
+        radioChecked = false
+        formData[5].dataset.errorVisible = "true";
+      }
+    }
   })
+
+
+
+
+
+
+  
 })
 
