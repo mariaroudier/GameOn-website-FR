@@ -99,6 +99,19 @@ formeInfo.addEventListener('submit',function(ev){
       formData[3].dataset.errorVisible = "true"
     }
 
+    // (3) check email - L'adresse électronique est valide
+    if (elem.id == 'email'){
+      let validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+      if (elem.value.match(validRegex)) {
+        elem.style.background = "fff"
+        emailChecked = true
+        formData[2].dataset.errorVisible = "false"
+      } else {
+        elem.style.background  = "affbbbb"
+        emailChecked = false
+        formData[2].dataset.errorVisible = "true"
+      }
+    }
   })
 })
 
