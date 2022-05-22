@@ -91,5 +91,14 @@ formeInfo.addEventListener('submit',function(ev){
         formData[1].dataset.errorVisible = "false"
       }
     }
+
+    // check birthdate 
+    else if (elem.attributes.type.value == "date" && elem.value == "" || elem.value == "undefined"){
+      elem.style.background = "affbbbb"
+      birthdateChecked = false
+      formData[3].dataset.errorVisible = "true"
+    }
+
   })
 })
+
