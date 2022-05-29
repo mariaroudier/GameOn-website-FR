@@ -101,7 +101,7 @@ formeInfo.addEventListener('submit',function(ev){
 
     // (3) check email - L'adresse électronique est valide
     if (elem.id == 'email'){
-      let validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+      let validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+$/;
       if (elem.value.match(validRegex)) {
         elem.style.background = "fff"
         emailChecked = true
@@ -125,11 +125,11 @@ formeInfo.addEventListener('submit',function(ev){
     }
 
     //disable error warning
-    formData.forEach(elem => elem.addEventListener("click", back = () => {
+    formData.forEach(elem => elem.addEventListener("click", () => {
       elem.dataset.errorVisible = "false";
     }))
 
-    inputIn.forEach(elem => elem.addEventListener("click", back = () => {
+    inputIn.forEach(elem => elem.addEventListener("click", () => {
       elem.style.background = '#fff'
     }))
   
@@ -153,35 +153,29 @@ formeInfo.addEventListener('submit',function(ev){
       checkbox1Checked = false
       formData[6].dataset.errorVisible = "true"
     }
-    // pour casher la forme et montrer un message
-    if (firstChecked == true && 
-      lastChecked == true && 
-      emailChecked == true && 
-      birthdateChecked == true && 
-      quantityChecked == true && 
-      radioChecked == true && 
-      checkbox1Checked == true){
-        console.log("its working!!!!")
-        modalbg.style.display = 'none';
-        welPage.style.display = 'block';
-      }
+    
 
 
-    // close welcome page
-    welButton.addEventListener("click", closeWelcomePage);
-
-    function closeWelcomePage() {
-      welPage.style.display = 'none';
-      console.log('its working')
-    }
+    
 
   })
+  // pour casher la forme et montrer un message
+  if (firstChecked == true && 
+    lastChecked == true && 
+    emailChecked == true && 
+    birthdateChecked == true && 
+    quantityChecked == true && 
+    radioChecked == true && 
+    checkbox1Checked == true){
+      modalbg.style.display = 'none';
+      welPage.style.display = 'block';
+    }
 
-
-
-
-
-
-  
 })
 
+// close welcome page
+welButton.addEventListener("click", closeWelcomePage);
+
+function closeWelcomePage() {
+  welPage.style.display = 'none';
+}
