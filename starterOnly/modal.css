@@ -36,9 +36,31 @@ img {
 .header-logo {
     float: left;
 }
+
+@media screen and (max-width: 540px) {
+  .header-logo{
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+  }
+  .header-logo img{
+    display: flex;
+    overflow: hidden;
+    width: 50%;
+    height: 50%;
+  }
+}
+
+
 .main-navbar {
     float: right;
 }
+
+#myTopnav{
+  display: flex;
+  justify-content: space-between;
+}
+
 .topnav a {
   float: left;
   display: block;
@@ -49,6 +71,13 @@ img {
   text-decoration: none;
   font-size: 20px;
   font-family: Roboto, sans-serif;
+}
+
+@media screen and (max-width: 540px) {
+  .topnav a {
+    color: #ff0000;
+  }
+
 }
 
 .topnav a:hover {
@@ -96,7 +125,7 @@ img {
   .topnav a.icon {
     float: right;
     display: block;
-    margin-top: -15px;
+    margin-top: 0px;
   }
 } 
 
@@ -110,8 +139,12 @@ main {
   margin: 1px 20px 15px;
   border-radius: 2rem;
   text-align: justify;
+}
 
-
+@media screen and (max-width: 540px) {
+  main {
+    margin-bottom: 4px;
+  }
 }
 
 .modal-btn {
@@ -166,7 +199,14 @@ main {
   height: 100%;
   width: 100%;
   overflow: auto;
-  background-color: rgba(26, 39, 156, 0.4);
+  background-color: white;
+}
+
+@media screen and (max-width: 540px) {
+  .bground {
+    background-color: rgba(255, 255, 255, 0);
+  
+  }
 }
 
 .content {
@@ -183,18 +223,39 @@ main {
   padding-top: 10px;
 }
 
-.modal-body {
-  padding: 15px 8%;
-  margin: 15px auto;
+@media screen and (max-width: 540px) {
+  .content{
+  margin-top: 70px;
+  margin-bottom: 0;
+  }
 }
+
+.modal-body {
+  padding: 15px 20px;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin: 15px auto;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
 
 label {
   font-family: var(--font-default);
-  font-size: 17px;
+  font-size: 13px;
   font-weight: normal;
   display: inline-block;
   margin-bottom: 11px;
 }
+
+@media screen and (max-width: 540px) {
+  label{
+    margin-bottom: 0px;
+  }
+}
+
+
 input {
   padding: 8px;
   border: 0.8px solid #ccc;
@@ -208,6 +269,15 @@ input {
   font-size: 20px;
   height: 48px;
 }
+
+@media screen and (max-width: 540px) {
+  .text-control {
+    height: 40px;
+  }
+
+}
+
+
 .formData[data-error]::after {
   content: attr(data-error);
   font-size: 0.4em;
@@ -298,8 +368,8 @@ input[data-error]::after {
 }
 .close {
   position: absolute;
-  right: 15px;
-  top: 15px;
+  right: 4px;
+  top: 3px;
   width: 32px;
   height: 32px;
   opacity: 1;
@@ -315,6 +385,13 @@ input[data-error]::after {
   width: 3px;
   background-color: #fff;
 }
+@media screen and (max-width: 540px) {
+  .close:before,
+  .close:after {
+    height: 24px;
+  }
+}
+
 .close:before {
   transform: rotate(45deg);
 }
@@ -332,7 +409,17 @@ input[data-error]::after {
   color: #fff;
   cursor: pointer;
   border: 0;
+  margin-bottom: 15px;
 }
+
+@media screen and (max-width: 540px) {
+  .btn-submit,
+  .btn-signup {
+    font-size: 0.8rem;
+    padding: 10px 70px;
+  }
+}
+
 /* custom select styles */
 .custom-select {
   position: relative;
@@ -402,10 +489,9 @@ input[data-error]::after {
 /* custom select end */
 .text-label {
   font-weight: normal;
-  font-size: 16px;
+  font-size: 13px;
 }
 .hero-section {
-  min-height: 93vh;
   border-radius: 10px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -436,7 +522,7 @@ input[data-error]::after {
   z-index: 1;
 }
 .hero-headline {
-  font-size: 6rem;
+  font-size: 5rem;
   font-weight: normal;
   white-space: nowrap;
 }
@@ -449,7 +535,7 @@ input[data-error]::after {
 .btn-signup {
   outline: none;
   text-transform: capitalize;
-  font-size: 1.3rem;
+  font-size: 1rem;
   padding: 15px 23px;
   margin: 0;
   margin-top: 59px;
@@ -470,6 +556,8 @@ input[data-error]::after {
   margin: 60px 0 30px;
   font-weight: bolder;
 }
+
+
 .hero-section > .btn-signup {
   display: none;
 }
@@ -486,7 +574,7 @@ footer {
   .hero-content {
     background: #fff;
     color: #000;
-    padding: 20px;
+    padding: 0;
   }
   .hero-content::after {
     content: unset;
@@ -495,25 +583,37 @@ footer {
     display: none;
   }
   .hero-headline {
-    font-size: 4.5rem;
+    font-size: 2.5rem;
     white-space: normal;
   }
   .hero-text {
     width: unset;
-    font-size: 1.5rem;
+    font-size: 1rem;
+    margin-top: 15px;
   }
   .hero-img img {
     border-radius: 10px;
     margin-top: 40px;
-  }
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
   .hero-section > .btn-signup {
     display: block;
-    margin: 32px auto 10px;
-    padding: 12px 35px;
+    margin: 19px auto 10px;
+    padding: 9px 32px;
   }
   .copyrights {
     margin-top: 50px;
     text-align: center;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .copyrights{
+    margin: 0;
+    padding-bottom: 30px;
   }
 }
 
@@ -535,43 +635,79 @@ footer {
   width: 100%;
   left: 0;
   top: 0;
-  background-color: rgba(26, 39, 156, 0.4);
+  background-color: rgb(255, 255, 255);
+}
+@media screen and (max-width: 540px) {
+  #welcome-page{
+  margin-top: 25px;
+  background-color: rgba(255, 255, 255, 0);
+  }
 }
 
-#text-box{
+#message-box{
   display: flex;
   position: absolute;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-direction: column;
   top:50%;
   left:50%;
   transform:translate(-50%, -50%);
   background-color: #232323;
-  width: 50%;
-  height: 200px;
+  width: 40%;
+  height: 750px;
   -webkit-transform:translate(-50%, -50%);
   -moz-transform:translate(-50%, -50%);
   -ms-transform:translate(-50%, -50%);
   -o-transform:translate(-50%, -50%);
 }
 
+@media screen and (max-width: 540px) {
+  #message-box{
+    width: 100%;
+    height: 680px;
+  }
+}
+
+#box-text{
+  width: 100%;
+  display: flex;
+  height: 50%;
+  justify-content: center;
+}
+
 #welcome-text{
   color: #ffffff;
-  align-self: center;
+  align-self: end;
   text-align: center;
-  padding: 25px;
+  padding: 10px;
+  width: 70%;
+  font-size: 30px;
   
 }
 @media screen and (max-width: 540px) {
   #welcome-text{
-    font-size: 14px;
+    font-size: 22px;
   }
 }
 
+#box-btn{
+  width: 100%;
+  display: flex;
+  height: 50%;
+  justify-content: center;
+  
+}
+
+
 #welcome-btn{
   width: 40%;
-  align-self: center;
+  margin-bottom: 15px;
+  align-self: end;
   border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 @media screen and (max-width: 540px) {
   #welcome-btn{

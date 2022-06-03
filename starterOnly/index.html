@@ -14,21 +14,19 @@
   <body>
     <div class="topnav" id="myTopnav">
       <div class="header-logo">
-      <img alt="logo" src="Logo.png" width="auto" height="auto" />
+        <img alt="logo" src="Logo.png" width="auto" height="auto" />
+      </div>
+      <div class="main-navbar">
+        <a href="#" class="active"><span>Accueil</span></a>
+        <a href="#"><span>Détails de l'évènement</span></a>
+        <a href="#"><span>À propos</span></a>
+        <a href="#"><span>Contact</span></a>
+        <a href="#"><span>Évènements passés</span></a>
+        <a href="javascript:void(0);" class="icon" onclick="editNav()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
     </div>
-    <div class="main-navbar">
-      
-      <a href="#" class="active"><span>Accueil</span></a>
-      <a href="#"><span>Détails de l'évènement</span></a>
-      <a href="#"><span>À propos</span></a>
-      <a href="#"><span>Contact</span></a>
-      <a href="#"><span>Évènements passés</span></a>
-      <a href="javascript:void(0);" class="icon" onclick="editNav()">
-        <i class="fa fa-bars"></i>
-      </a>
-    </div>
-    </div>
-  </div>
     <main>
       <div class="hero-section">
         <div class="hero-content">
@@ -52,11 +50,16 @@
         </button>
       </div>
       <div id = welcome-page>
-        <div id = text-box>
-          <span id = welcome-text>Merci ! Votre réservation a été reçue.</span>
-          <button class="button" id="welcome-btn">Fermer</button>
+        <div id = message-box>
+          <span class="close"></span>
+          <div id="box-text">
+            <span id = welcome-text>Merci pour votre inscription</span>
+          </div>
+          <div id="box-btn">
+            <button class="button" id="welcome-btn">Fermer</button>
+          </div>
         </div>
-        </div>
+      </div>
       <div class="bground">
         <div class="content">
           <span class="close"></span>
@@ -64,7 +67,7 @@
             <form name="reserve" action="index.html" method="get" id="formeInfo">
               <div class="formData" data-error="Veuillez entrer 2 caractères ou plus pour le champ du prénom">
                 <label for="first">Prénom</label><br>
-                <input class="text-control" type="text" id="first" name="first"oninput="if(/[^a-zA-Z]/.test(this.value)){let Selection = this.selectionStart-1;this.value=this.value.replace(/[^a-zA-Z]/g,'');this.setSelectionRange(Selection, Selection);}"/>
+                <input class="text-control" type="text" id="first" name="first" oninput="if(/[^a-zA-Z]/.test(this.value)){let Selection = this.selectionStart-1;this.value=this.value.replace(/[^a-zA-Z]/g,'');this.setSelectionRange(Selection, Selection);}"/>
                   <br>
               </div>
               <div class="formData" data-error="Veuillez entrer 2 caractères ou plus pour le champ du nom">
@@ -134,7 +137,7 @@
                 </label>
                 <br>
               </div>
-              <input class="btn-submit" type="submit" class="button" value="C'est parti"/>
+              <input class="button btn-submit" type="submit" value="C'est parti"/>
             </form>
           </div>
         </div>

@@ -93,10 +93,15 @@ formeInfo.addEventListener('submit',function(ev){
     }
 
     // check birthdate 
-    else if (elem.attributes.type.value == "date" && elem.value == "" || elem.value == "undefined"){
-      elem.style.background = "affbbbb"
-      birthdateChecked = false
-      formData[3].dataset.errorVisible = "true"
+    else if (elem.attributes.type.value == "date" ){
+      if(elem.value == "" || elem.value == "undefined"){
+        elem.style.background = "affbbbb"
+        birthdateChecked = false
+        formData[3].dataset.errorVisible = "true"
+      } else{        
+        birthdateChecked = true
+      } 
+      
     }
 
     // (3) check email - L'adresse électronique est valide
@@ -159,6 +164,14 @@ formeInfo.addEventListener('submit',function(ev){
     
 
   })
+  console.log(`firstChecked ${firstChecked}`)
+  console.log(`lastChecked ${lastChecked}`)
+  console.log(`emailChecked ${emailChecked}`)
+  console.log(`birthdateChecked ${birthdateChecked}`)
+  console.log(`quantityChecked ${quantityChecked}`)
+  console.log(`radioChecked ${radioChecked}`)
+  console.log(`checkbox1Checked ${checkbox1Checked}`)
+
   // pour casher la forme et montrer un message
   if (firstChecked == true && 
     lastChecked == true && 
@@ -179,3 +192,5 @@ welButton.addEventListener("click", closeWelcomePage);
 function closeWelcomePage() {
   welPage.style.display = 'none';
 }
+
+closeCross.forEach((exit) => exit.addEventListener("click", closeWelcomePage));
