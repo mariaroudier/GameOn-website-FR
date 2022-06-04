@@ -196,10 +196,11 @@ main {
   z-index: 1;
   left: 0;
   top: 0;
+  box-shadow: 0 10px 10px #1e1e1eb8;
   height: 100%;
   width: 100%;
   overflow: auto;
-  background-color: white;
+  background-color: rgba(130, 94, 209, 0.575);
 }
 
 @media screen and (max-width: 540px) {
@@ -635,12 +636,12 @@ footer {
   width: 100%;
   left: 0;
   top: 0;
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(130, 94, 209, 0.575);
 }
 @media screen and (max-width: 540px) {
   #welcome-page{
   margin-top: 25px;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: rgba(255, 255, 255, 0.578);
   }
 }
 
@@ -649,8 +650,10 @@ footer {
   position: absolute;
   justify-content: space-between;
   flex-direction: column;
+  box-shadow: 0 10px 10px #1e1e1eb8;
   top:50%;
   left:50%;
+  border-radius: 10px;
   transform:translate(-50%, -50%);
   background-color: #232323;
   width: 40%;
